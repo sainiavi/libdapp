@@ -57,4 +57,5 @@ web3.eth.getAccounts(console.log);
           console.log(newContractInstance.options.address) // instance with the new contract address
       });
 
-      Library.methods.set_book_detail("abc","nbi","1","awd","0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4").send();
+      // Library.methods.set_book_detail("abc","nbi","1","awd","0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4").send();
+      // Library.methods.set_book_detail("jhfvb","dbr",1,"snh","0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4").send({from: '0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4'})

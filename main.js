@@ -42,4 +42,4 @@ console.log("hello ");
       
 
       document.querySelector('#btn-login').onclick = login;
-      document.querySelector('#btn-logout').onclick = logOut;
+      // document.querySelector('#btn-logout').onclick = logOut;
