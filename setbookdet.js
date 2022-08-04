@@ -1,7 +1,6 @@
-// function setter()
-// {
-Web3 = require("web3");
- let web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
+console.log("script worjking")
+
+let web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
 
  const Contract = new web3.eth.Contract([
 	{
@@ -211,21 +210,30 @@ Web3 = require("web3");
 ], "0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4");
 
 
+function myFunction() {
+	var a = document.getElementById("bname").value;
+	var b = document.getElementById("wname").value;
+	var c = document.getElementById("bid").value;
+ 	var d = document.getElementById("bown").value;
+	var e = document.getElementById("oadd").value;
+ console.log(a,b,c,d,e)
+}
 
-var a = document.getElementById("bname").value;
-var b = document.getElementById("wname").value;
-var c = document.getElementById("bid").value;
-var d = document.getElementById("bown").value;
-var e = document.getElementById("oadd").value;
+// var b = document.getElementById("wname").value;
+// var c = document.getElementById("bid").value;
+// var d = document.getElementById("bown").value;
+// var e = document.getElementById("oadd").value;
 
 const setter = async()=>{
-    // console.log(window.web3)
-    // console.log(window.ethereum)
- await   Contract.methods.set_book_detail(a,b,c,d,e).send({from:'0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4',gas :"50000"})
-    console.log(e)
+	var a = document.getElementById("bname").value;
+	var b = document.getElementById("wname").value;
+	var c = document.getElementById("bid").value;
+ 	var d = document.getElementById("bown").value;
+	var e = document.getElementById("oadd").value;
+await Contract.methods.set_book_detail(a,b,c,d,e).send({from:'0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4',gas :"50000"})
+//await   Contract.methods.set_book_detail("a","b",1,"d","0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4").send({from:'0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4',gas :"50000"})
+console.log('hua kuch to')
   };
 
-// Contract.methods.set_book_detail(a,b,c,d,e).send({from: '0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4'})
-// }
 
 

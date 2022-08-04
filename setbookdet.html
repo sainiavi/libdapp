@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="signin.css">
 
-    
+	<script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <!-- <script src="https://unpkg.com/moralis/dist/moralis.js"></script> -->
@@ -82,7 +82,7 @@
 
    
     <div class="form-floating">
-      <input type="text" class="form-control" id="bname" placeholder="Book name">
+      <input type="text" class="form-control" id="bname" placeholder="Book name" > 
       <label for="bname">Book Name</label>
     </div>
 
@@ -97,255 +97,25 @@
       </div>
 
     <div class="form-floating">
-        <input type="text" class="form-control" id="bname" placeholder="Book Owner">
+        <input type="text" class="form-control" id="bown" placeholder="Book Owner">
         <label for="bown">Book Owner</label>
       </div>
 
     <div class="form-floating">
-        <input type="text" class="form-control" id="oadd" placeholder="Owner Address">
+        <input type="text" class="form-control" id="oadd"  placeholder="Owner Address">
         <label for="oadd">Owner Address</label>
       </div>
-      <a id="btnsetter" class="w-100 btn btn-lg btn-primary" type="button" >Submit</a>
+      <a id="btnsetter" class="w-100 btn btn-lg btn-primary" onclick="setter()" type="button" >Submit</a>
     <p class="mt-5 mb-3 text-muted">&copy; Avi Saini-2022</p>
   </form>
      
  
 </main>
 
-<script>
-const a = require(node;
- Web3 = require('web3');
- let web3 = new Web3(new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545"));
+
+<script src="setbookdet.js"></script>
 
 
- const Contract = new web3.eth.Contract([
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_writer",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "_owner",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "owner_address",
-				"type": "address"
-			}
-		],
-		"name": "set_book_detail",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "addr",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "writer",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "owner",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "owner_adress",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner_address",
-				"type": "address"
-			}
-		],
-		"name": "by_owner_address",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "get_details",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "own_addr",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "searchBook",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "writer",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "owner",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "owner_adress",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-], "0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4");
-console.log('bxsvx');
-
-
-var a = document.getElementById("bname").value;
-var b = document.getElementById("wname").value;
-var c = document.getElementById("bid").value;
-var d = document.getElementById("bown").value;
-var e = document.getElementById("oadd").value;
-
-document.querySelector('#btnsetter').onclick = setter;
-
-
-const setter = async()=>{
-    // console.log(window.web3)
-    // console.log(window.ethereum)
- await   Contract.methods.set_book_detail(a,b,c,d,e).send({from:'0x495210369aa49BA84317134a7E5Bf43d0f4F2ac4',gas :"50000"})
-    console.log(e)
-  };
-
-
-</script>
-    
   </body>
 
 </html>
